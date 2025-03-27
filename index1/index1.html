@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Website</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+</head>
+
+<body>
+    <header>
+        <h1>Welcome to Travel Explorer</h1>
+    </header>
+    <div class="hero-image">
+        <img class="bg-img" src="images/hero.jpg" alt="hero image" />
+    </div>
+    <div class="container">
+        <h2>Popular Destinations</h2>
+        <div class="destination">
+            <div class="card">
+                <h3>Paris</h3>
+                <p>The city of love.</p>
+                <p>Facilities: Free Wi-Fi, Sightseeing Tours, Luxury Hotels</p>
+                <button onclick="bookNow('Paris')">Book Now</button>
+            </div>
+            <div class="card">
+                <h3>Tokyo</h3>
+                <p>The heart of Japan.</p>
+                <p>Facilities: Bullet Train, High-Tech Hotels, Sushi Restaurants</p>
+                <button onclick="bookNow('Tokyo')">Book Now</button>
+            </div>
+        </div>
+
+        <h2>Gallery</h2>
+        <div class="gallery">
+            <img src="images/paris.jpg" alt="Paris">
+            <img src="images/tokyo.jpg" alt="Tokyo">
+        </div>
+
+        <h2>Book Your Trip</h2>
+        <form onsubmit="return validateForm()">
+            <input type="text" id="name" placeholder="Your Name" required><br>
+            <select id="destination">
+                <option value="Paris">Paris</option>
+                <option value="Tokyo">Tokyo</option>
+            </select><br>
+            <button type="submit">Submit</button>
+        </form>
+
+        <h2>Make Payment</h2>
+<p>Scan the QR Code below to pay via PhonePe:</p>
+<img src="images/qr code.jpg" alt="PhonePe QR Code" width="200px">
+<br>
+
+<!-- Input for transaction ID -->
+<input type="text" id="transactionId" placeholder="Enter Payment Transaction ID">
+<button onclick="confirmPayment()">✅ I Have Paid</button>
+
+<!-- Message after confirmation -->
+<div id="paymentMessage">⚠️ Payment Pending - Awaiting Verification</div>
+
+        <h2>Recent Bookings</h2>
+        <ul id="bookingList" class="recent-bookings"></ul>
+
+        <h2>Booking Confirmation</h2>
+        <div id="confirmation" class="confirmation-box"></div>
+
+        <h2>Find Us on Google Maps</h2>
+        <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d126743.32010967168!2d2.2529426499999997!3d48.858844099999996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e66fddf9b2a63b%3A0x5e26b4f0e2b16cdb!2sParis%2C%20France!5e0!3m2!1sen!2sus!4v1615634023227!5m2!1sen!2sus"
+            width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy">
+        </iframe>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
